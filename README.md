@@ -29,3 +29,34 @@ server.start(() => console.log("Graphql Server Running"));
 </code></pre>
 
 ## #0.5 Creating the first Query and Resolver
+
+Schema : 주고받을 정보에 대한 서술  
+schema.graphql : Mutation(정보 변형), Query(정보 받기)에 대한 정보 서술
+
+<pre><code>
+// in schema.graphql
+type Query{
+    name: String!
+}
+
+type Mutation{
+
+}
+
+// in index.js
+typeDefs: ""
+
+// in resolvers.js (해결해야 할 Query)
+const resolvers = {
+  Query: {
+    name: () => "nicolas"
+  }
+};
+
+////여기에 query를 어떻게 보내줄지를 프로그래밍한다.
+
+export default resolvers;
+</code></pre>
+
+View나 URL로 작동되는 게 아니라, Query와 Resolver로 작동되는 GraphQ.  
+localhost:4000 에서 확인.
